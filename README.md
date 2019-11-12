@@ -43,10 +43,58 @@ More reading on the Gitflow workflow: https://www.atlassian.com/git/tutorials/co
 * Name your branch as new-branch, i.e. game-saves, player-jitter, enemy-teleportation, environment-textures, etc. This is called kabob case, meaning words are separated by dashes. Looks like one big kabob, mmm.
 * If your branch is part of a specific feature, name your branch as feature/new-branch, i.e. feature/game-saves, bug/player-jitter, feature/enemy-teleportation, art-assets/environment-textures, etc.
 
-## Initial Unity Project Setup
+## Building for Mobile (Android)
 
-* Pull origin/master
-* Go to Build Settings and set Build Platform to Android
+The following steps were taking from https://learn.unity.com/tutorial/building-for-mobile#5c7f8528edbc2a002053b4a2. Please note that your build device must run the latest version of Android for the below steps to work. If not, refer to the steps provided in the link.
+
+### JDK (Java Development Kit) Installation
+
+* Go to the Java website at https://www.oracle.com/technetwork/java/javase/downloads/index.html
+* Download and install the most recent version of the Java Platform JDK
+
+### Android SDK (Software Development Kit) Installation
+
+* Go to the Android Developer website at https://developer.android.com/studio
+* Navigate to the second half of the Android Developer website and locate the section called 'Command line tools only'
+* Download the SDK tools package for your platform
+* Unzip the downloaded file
+* Store the directory in a memorable and accessible location on your computer. You will refer to the directory's path later (this will be mentioned under the 'Linking Android SDK Tools section).
+* Open the directory that contains the Android SDK Tools and navigate to tools
+* Double-click on the file 'android' to run
+
+### Switching the Build Platform in Unity
+
+* Open the Build Settings (File > Build Settings)
+* Highlight 'Android' in the list of platforms
+* Select Switch Platform at the bottom left-hand corner of the Build Settings window
+
+### Configuring Player Settings in Unity
+
+* Open the Player Settings (Edit > Project Settings > Player)
+* Expand the section called 'Other Settings' and enter your bundle identifier (format should be 'com.company-name.game-name)
+
+### Linking Android SDK Tools
+
+* Open Preferences (Windows: Edit > Preferences, OSX: Unity > Preferences)
+* Navigate to 'External Tools'
+* For the Android SDK field, click Browse, navigate to where you put the directory containing Android SDK Tool, and click Choose.
+
+### Prepping Your Android Device
+
+This will enable Developer mode on an Android device.
+
+* On your Android device, navigate to Settings > About phone (or About tablet if building on a tablet).
+* Scroll to the bottom and tap Build number seven times. A popup will appear, confirming that you are now a developer.
+* Navigate to Settings > Developer options > Debugging and enable USB debugging.
+
+### Build an Android Project Using Unity
+
+* Connect your Android device to your computer with a USB cable
+* You may see a prompt asking to confirm to enable uSB debugging on the device. If so, select OK.
+* In Unity, open the Build Settings (File > Build Settings)
+* Click Build And Run
+* Select the location you wish to save your build. If in the local repo, save the build in the Builds folder.
+* When naming builds, use a mix of title casing and snake casing for the naming convention, like 'GameName_Build_TwoDigitBuildNumber' (example: ByteBlast_Build_01)
 
 ## Useful Links
 
