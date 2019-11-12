@@ -18,8 +18,8 @@ Git is fun, except when it's not.
 
 ### Git-related Terms
 
-Local master branch = master_
-Remote master branch = origin/master_
+Local master branch = master__
+Remote master branch = origin/master__
 PR = "pull request"
 
 ### Git Workflow
