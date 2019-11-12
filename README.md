@@ -36,7 +36,12 @@ Git is fun, except when it's not.
 10. Once your PR is approved, merge your branch into origin/master
 11. Do a happy dance!
 
-Will update this section if any steps aren't clear. -LL
+More reading on the Gitflow workflow: https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
+
+### Git Branch Naming Convention
+
+* Name your branch as new-branch, i.e. game-saves, player-jitter, enemy-teleportation, environment-textures, etc. This is called kabob case, meaning words are separated by dashes. Looks like one big kabob, mmm.
+* If your branch is part of a specific feature, name your branch as feature/new-branch, i.e. feature/game-saves, bug/player-jitter, feature/enemy-teleportation, art-assets/environment-textures, etc.
 
 ## Initial Unity Project Setup
 
