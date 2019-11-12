@@ -71,7 +71,7 @@ The following steps were taking from https://learn.unity.com/tutorial/building-f
 ### Configuring Player Settings in Unity
 
 * Open the Player Settings (Edit > Project Settings > Player)
-* Expand the section called 'Other Settings' and enter your bundle identifier (format should be 'com.company-name.game-name)
+* Expand the section called 'Other Settings' and enter your bundle identifier. Use title casing format for the naming convention (ie: com.BriannaRodenborn.ByteBlast).
 
 ### Linking Android SDK Tools
 
@@ -94,7 +94,7 @@ This will enable Developer mode on an Android device.
 * In Unity, open the Build Settings (File > Build Settings)
 * Click Build And Run
 * Select the location you wish to save your build. If in the local repo, save the build in the Builds folder.
-* When naming builds, use a mix of title casing and snake casing for the naming convention, like 'GameName_Build_TwoDigitBuildNumber' (example: ByteBlast_Build_01)
+* When naming builds, use a mix of title casing and snake casing for the naming convention (ie: ByteBlast_Build_01).
 
 ## Useful Links
 
