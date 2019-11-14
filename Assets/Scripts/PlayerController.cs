@@ -19,11 +19,18 @@ public class PlayerController : MonoBehaviour
       rb.velocity.y,
       joystick.Vertical * 5f);
     
+#if UNITY_EDITOR
     if (Input.GetMouseButton(0))
     {
-      transform.eulerAngles = new Vector3(transform.eulerAngles.x, 
+      
+    }
+#endif
+  }
+
+  private void UpdatePlayerRotation()
+  {
+    transform.eulerAngles = new Vector3(transform.eulerAngles.x, 
         Mathf.Atan2(joystick.Horizontal, joystick.Vertical) * Mathf.Rad2Deg, 
         transform.eulerAngles.z);
-    }
   }
 }
