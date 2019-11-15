@@ -19,15 +19,20 @@
 
 State machines are used to track particular aspects of the app/game. They may contain methods and properties to set and return states, but actual implementation is controlled by an event handler, meaning use of a state machine is indirect.
 
+Currently contemplating whether or not there should be a StateManager base class that the below state machines will derived from.
+
 ### AppStateManager
+
+Controls the state of the app as a whole. The AppStateManager will be present in all scenes of the app.
+
 * Title
 * Loading (?)
 * Tutorial
 * Game
 
-### GameManager/GameStateManager
+### GameSessionManager
 
-Controls the state of the game.
+Controls the state of the game session. The GameSessionManager will be present only in the game scene.
 
 * Countdown
 * InSession
@@ -35,6 +40,9 @@ Controls the state of the game.
 * Ended
 
 ### PlayerState
+
+Controls the state of the player. 
+
 * Alive
 * Dead
 
