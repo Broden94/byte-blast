@@ -61,12 +61,13 @@ Handling events this way will execute multiple methods from a variety of classes
 #### 
 
 #### Properties
+
   * public bool IsAlive - Returns the health of the player. If above 0, return true; otherwise, return false.
 
-
-
 ### Enemy
+
 This serves as a base class. Each derived Enemy class has their own, distinct behavior
 
 #### Properties
+
   * static int EnemyCount - Returns the number of current instantiated enemies
