@@ -61,3 +61,6 @@ crashlytics-build.properties
 
 # .DS_Store
 .DS_Store
+
+# Underscored folders/directories
+_*/
