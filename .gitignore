@@ -62,5 +62,6 @@ crashlytics-build.properties
 # .DS_Store
 .DS_Store
 
-# Underscored folders/directories
-_*/
+# Underscored folders/directories and their meta files
+_*
+_*.meta
