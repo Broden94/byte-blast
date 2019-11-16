@@ -56,15 +56,23 @@ Handling events this way will execute multiple methods from a variety of classes
 
 ## Character Classes
 
-### Player
+### Main Character
 
-#### 
+#### Controls
+
+##### Movement
+
+The main character is controlled via virutal joystick (imported asset Joystick Pack) for movement placed at the lower lefthand corner of the screen. The input from the joystick allows the main character to move forward; if there is no input (aka the player lifted their finger off the joystick) the main character's rotation is left off where the joystick input was last detected.
+
+##### Shooting
+
+A shooting button is placed at the lower righthand corner of the screen. Its y-position matches that of the virtual joystick. Tapping on the shooting button activates bullets to fire in the main character's forward direction. Holding down the shooting button shoots bullets at a constant pace slightly slower than the speed of repeatedly tapping on the shooting button. Each bullet will last for three seconds
 
 #### Properties
 
   * public bool IsAlive - Returns the health of the player. If above 0, return true; otherwise, return false.
 
-### Enemy
+### Enemies
 
 This serves as a base class. Each derived Enemy class has their own, distinct behavior
 
