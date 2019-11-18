@@ -29,13 +29,14 @@ Controls the state of the app as a whole. The AppStateManager will be present in
 * Loading (?)
 * Tutorial
 * Game
+* Ad
 
-### GameSessionManager
+### GameStateManager
 
-Controls the state of the game session. The GameSessionManager will be present only in the game scene.
+Controls the state of the game session. The GameStateManager will be present only in the game scene.
 
 * Countdown
-* InSession
+* Playing
 * Paused
 * Ended
 
@@ -43,8 +44,14 @@ Controls the state of the game session. The GameSessionManager will be present o
 
 Controls the state of the player. 
 
-* Alive
-* Dead
+* Movement
+  * Moving
+  * Stopped
+  * Dead
+
+* Action (move this to joystick?)
+  * Shooting
+  * Throwing
 
 ## Event Handling
 
@@ -53,6 +60,8 @@ Events will control the flow of the app. Methods that are subscribed to certain 
 For example, say there are two methods: ShowPauseMenu() and HidePauseMenu(). ShowPauseMenu() is subscribed to the event OnPause while HidePauseMenu() is subscribed to the event OnPlay. The pause button triggers the OnPause event, which will then broadcast it to the class that handles the ShowPauseMenu() method as well as any other classes that have methods subscribed to the OnPause event. In the same way, the exit button in the pause menu triggers the OnPlay event, which will then broadcast it to the class that handles the HidePauseMenu() method and any other classes whose methods are subscribed to the OnPlay event.
 
 Handling events this way will execute multiple methods from a variety of classes, thus allowing ease of tracking. Using an event handler also helps with controlling state machines.
+
+As of 11/17, the project will implement the observer design pattern. If time allows it, shifting to a pub-sub event bus is desirable.
 
 ## Character Classes
 
@@ -79,3 +88,33 @@ This serves as a base class. Each derived Enemy class has their own, distinct be
 #### Properties
 
   * static int EnemyCount - Returns the number of current instantiated enemies
+
+## User Interfaces
+
+### Pause Menu
+
+* Available when the game state is playing
+* Accessible by pause button in the top corner of the screen
+* Contents
+  * Resume
+  * Restart
+    * Confirmation screen - Sets the game state back to countdown
+  * Settings (optional)
+    * Volume
+  * Return to main
+    * Confirmation screen
+
+### End Screen
+
+* Automatically appears when the game session is over
+* Contents
+  * Player stats (non-interactive)
+  * Replay - Sets the game state back to countdown
+  * Return to main
+    * Confirmation screen
+
+### Main Menu
+
+* Play
+* Settings (optional)
+* Leaderboard (optional)
