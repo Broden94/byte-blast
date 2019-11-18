@@ -1,9 +1,8 @@
 # This .gitignore file should be placed at the root of your Unity project directory
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
-#
-*[Aa]rtCollection/
-*[Bb]uilds/
+
+[Bb]uilds/
 /[Ll]ibrary/
 [Ll]ogs/
 [Tt]emp/
@@ -61,3 +60,7 @@ crashlytics-build.properties
 
 # .DS_Store
 .DS_Store
+
+# Underscored folders/directories and their meta files
+_*
+_*.meta
