@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 3051412802813998349}
   - component: {fileID: 2992912825660839419}
   - component: {fileID: 1577601570644843830}
-  - component: {fileID: 7351278676794761259}
+  - component: {fileID: 7335192766639691607}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -140,7 +140,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &7351278676794761259
+--- !u!114 &7335192766639691607
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,12 +149,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3051412802813998351}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a24a4f4d5c6e84d7e97a73846872f615, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a4dbdbe161a143858b25a623b014e11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   joystick: {fileID: 0}
   Speed: 10
-  PewPew: {fileID: 4950397750487861204, guid: c8699ecc081ba408ea1fffb1b3fc4a22, type: 3}
+  PewPewPrefab: {fileID: 4950397750487861204, guid: c8699ecc081ba408ea1fffb1b3fc4a22,
+    type: 3}
   PewPewSpawnpoint: {fileID: 6756626917445581915}
   ShootButton: {fileID: 0}
   TimeUntilNextPewPew: 0.2

@@ -5,15 +5,16 @@ using UnityEngine.UI;
 
 // Use
 
-public class UserController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
-  public Joystick joystick;
-  public float Speed = 3;
+  public Joystick Joystick;
+  public ShootButton ShootButton;
+  
+  public float Speed = 10;
   private Rigidbody rb;
 
-  public GameObject PewPew;
+  public GameObject PewPewPrefab;
   public Transform PewPewSpawnpoint;
-  public ShootButton ShootButton;
   private bool _canPewPew = true;
   public float TimeUntilNextPewPew = .2f;
 
@@ -31,7 +32,7 @@ public class UserController : MonoBehaviour
 
     if (_canPewPew && ShootButton.CurrentPointerEvent == ShootButton.PointerEvent.Down)
     {
-      GameObject pewPew = Instantiate(PewPew, PewPewSpawnpoint.position, PewPewSpawnpoint.rotation);
+      GameObject pewPew = Instantiate(PewPewPrefab, PewPewSpawnpoint.position, PewPewSpawnpoint.rotation);
       pewPew.GetComponent<Rigidbody>().velocity = (pewPew.transform.forward) * 50;
       Destroy(pewPew, 3);
       StartCoroutine(CountdownToNextShot());
@@ -44,22 +45,22 @@ public class UserController : MonoBehaviour
 
   private void FixedUpdate()
   {
-		rb.velocity = new Vector3(joystick.Horizontal * Speed,
+		rb.velocity = new Vector3(Joystick.Horizontal * Speed,
       rb.velocity.y,
-      joystick.Vertical * Speed);
+      Joystick.Vertical * Speed);
   }
 
   public void Shoot(bool canShoot)
   {
     if (ShootButton.CurrentPointerEvent == ShootButton.PointerEvent.Clicked)
     {
-      GameObject pewPew = Instantiate(PewPew, PewPewSpawnpoint.position, PewPewSpawnpoint.rotation);
+      GameObject pewPew = Instantiate(PewPewPrefab, PewPewSpawnpoint.position, PewPewSpawnpoint.rotation);
       pewPew.GetComponent<Rigidbody>().velocity = (pewPew.transform.forward) * 50;
       Destroy(pewPew, 3);
     }
     else if (canShoot && ShootButton.CurrentPointerEvent == ShootButton.PointerEvent.Down)
     {
-      GameObject pewPew = Instantiate(PewPew, PewPewSpawnpoint.position, PewPewSpawnpoint.rotation);
+      GameObject pewPew = Instantiate(PewPewPrefab, PewPewSpawnpoint.position, PewPewSpawnpoint.rotation);
       pewPew.GetComponent<Rigidbody>().velocity = (pewPew.transform.forward) * 50;
       Destroy(pewPew, 3);
       StartCoroutine(CountdownToNextShot());
@@ -80,7 +81,7 @@ public class UserController : MonoBehaviour
   private void UpdatePlayerRotation()
   {
     transform.eulerAngles = new Vector3(transform.eulerAngles.x, 
-        Mathf.Atan2(joystick.Horizontal, joystick.Vertical) * Mathf.Rad2Deg, 
+        Mathf.Atan2(Joystick.Horizontal, Joystick.Vertical) * Mathf.Rad2Deg, 
         transform.eulerAngles.z);
   }
 }

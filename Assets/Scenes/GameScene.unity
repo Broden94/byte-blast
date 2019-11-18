@@ -193,7 +193,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1e-45, y: 0.0148951635, z: 1e-45, w: 4.9e-44}
+  m_BoundingSphereOverride: {x: 0, y: 0.015691504, z: 1e-45, w: 6.32e-43}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -4925,16 +4925,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7351278676794761259, guid: 6f12bd489ba384a078cdeb565850d280,
+    - target: {fileID: 7335192766639691607, guid: 6f12bd489ba384a078cdeb565850d280,
         type: 3}
       propertyPath: joystick
       value: 
       objectReference: {fileID: 592515447}
-    - target: {fileID: 7351278676794761259, guid: 6f12bd489ba384a078cdeb565850d280,
+    - target: {fileID: 7335192766639691607, guid: 6f12bd489ba384a078cdeb565850d280,
         type: 3}
       propertyPath: ShootButton
       value: 
       objectReference: {fileID: 1517568936}
+    - target: {fileID: 7335192766639691607, guid: 6f12bd489ba384a078cdeb565850d280,
+        type: 3}
+      propertyPath: Joystick
+      value: 
+      objectReference: {fileID: 592515447}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f12bd489ba384a078cdeb565850d280, type: 3}
 --- !u!1001 &7703816317887812235
