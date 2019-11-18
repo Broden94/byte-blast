@@ -10,8 +10,6 @@ public class GameStateManager : MonoBehaviour
   {
     if (Instance == null) Instance = this;
     else Destroy(gameObject);
-
-    DontDestroyOnLoad(gameObject);
   }
 
   [SerializeField]
@@ -65,6 +63,21 @@ public class GameStateManager : MonoBehaviour
       o.UpdateGameStateObserver();
     }
   }
-
   #endregion
+
+  public void StartOver() 
+  {
+    SetGameState(GameState.Countdown);
+    StartCoroutine(GameController.Instance.Countdown());
+  }
+
+  public void Pause()
+  {
+    SetGameState(GameState.Paused);
+  }
+
+  public void Unpause()
+  {
+    SetGameState(GameState.Playing);
+  }
 }

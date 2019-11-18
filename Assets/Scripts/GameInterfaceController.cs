@@ -1,73 +1,103 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameInterfaceController : MonoBehaviour, IGameStateObserver
 {
-  //public GameObject CountdownScreen;
+  public GameObject CountdownScreen;
   public GameObject HUD;
-  //public GameObject PauseScreen;
+  public GameObject PauseScreen;
   public GameObject EndScreen;
 
-  //public GameObject StartOverConfirmationScreen;
-  //public GameObject LeaveGameConfirmationScreen;
+  public GameObject StartOverConfirmationScreen;
+  public GameObject BackToTitleConfirmationScreen;
+
+  public Button TestButton;
+
+  #region MonoBehaviour Methods
 
   private void Start()
   {
     GameStateManager.Instance.Register(this);
+    UpdateGameStateObserver();
   }
 
   private void OnDestroy()
   {
+    ResetInterface();
     GameStateManager.Instance.Unregister(this);
   }
+  #endregion
 
   #region IGameStateObserver Overrides
   public void UpdateGameStateObserver()
   {
-    //CountdownScreen.SetActive(GameStateManager.Instance.CurrentGameState == GameStateManager.GameState.Countdown);
+    CountdownScreen.SetActive(GameStateManager.Instance.CurrentGameState == GameStateManager.GameState.Countdown);
     HUD.SetActive(GameStateManager.Instance.CurrentGameState == GameStateManager.GameState.Playing);
-    //PauseScreen.SetActive(GameStateManager.Instance.CurrentGameState == GameStateManager.GameState.Paused);
+    PauseScreen.SetActive(GameStateManager.Instance.CurrentGameState == GameStateManager.GameState.Paused);
     EndScreen.SetActive(GameStateManager.Instance.CurrentGameState == GameStateManager.GameState.Ended);
+  }
+  #endregion
   
-  
+  #region Private Methods
+  private void ResetInterface()
+  {
+    CountdownScreen.SetActive(false);
+    HUD.SetActive(false);
+    PauseScreen.SetActive(false);
+    EndScreen.SetActive(false);
+    StartOverConfirmationScreen.SetActive(false);
+    BackToTitleConfirmationScreen.SetActive(false);
   }
   #endregion
 
   #region Button Methods
-  public void EnterPauseScreen()
+  public void OpenPauseScreen()
   {
-    GameStateManager.Instance.SetGameState(GameStateManager.GameState.Paused);
+    PauseScreen.SetActive(true);
+    GameStateManager.Instance.Pause();
   }
 
-  public void ExitPauseScreen()
+  public void ClosePauseScreen()
   {
-    GameStateManager.Instance.SetGameState(GameStateManager.GameState.Playing);
+    PauseScreen.SetActive(false);
+    GameStateManager.Instance.Unpause();
   }
-/*
-  public void EnterStartOverConfirmationScreen()
+
+  public void OpenStartOverConfirmationScreen()
   {
     StartOverConfirmationScreen.SetActive(true);
+    PauseScreen.SetActive(false);
   }
 
-  public void ExitStartOverConfrimationScreen()
+  public void CloseStartOverConfirmationScreen()
   {
     StartOverConfirmationScreen.SetActive(false);
+    PauseScreen.SetActive(true);
   }
 
-  public void EnterLeaveGameConfirmationScreen()
+  public void OpenBackToTitleConfirmationScreen()
   {
-    LeaveGameConfirmationScreen.SetActive(true);
+    BackToTitleConfirmationScreen.SetActive(true);
+    PauseScreen.SetActive(false);
   }
 
-  public void ExitLeaveGameConfirmationScreen()
+  public void CloseBackToTitleConfirmationScreen()
   {
-    LeaveGameConfirmationScreen.SetActive(false);
+    BackToTitleConfirmationScreen.SetActive(false);
+    PauseScreen.SetActive(true);
   }
-*/
-  public void StartOverButton()
+
+  public void StartOver()
   {
-    GameStateManager.Instance.SetGameState(GameStateManager.GameState.Countdown);
+    ResetInterface();
+    GameStateManager.Instance.StartOver();
+  }
+
+  public void GoToTitle()
+  {
+    AppController.Instance.OpenScene(AppConstants.TitleScreen);
   }
   #endregion
 }
