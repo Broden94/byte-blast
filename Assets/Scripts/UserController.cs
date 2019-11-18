@@ -15,7 +15,7 @@ public class UserController : MonoBehaviour
   public Transform PewPewSpawnpoint;
   public ShootButton ShootButton;
   private bool _canPewPew = true;
-  public float PewPewCountdown = .5f;
+  public float TimeUntilNextPewPew = .2f;
 
   private void Start()
   {
@@ -44,9 +44,9 @@ public class UserController : MonoBehaviour
 
   private void FixedUpdate()
   {
-		rb.velocity = new Vector3(joystick.Horizontal * 5f,
+		rb.velocity = new Vector3(joystick.Horizontal * Speed,
       rb.velocity.y,
-      joystick.Vertical * 5f);
+      joystick.Vertical * Speed);
   }
 
   public void Shoot(bool canShoot)
@@ -73,7 +73,7 @@ public class UserController : MonoBehaviour
   public IEnumerator CountdownToNextShot()
   {
     _canPewPew = false;
-    yield return new WaitForSeconds(PewPewCountdown);
+    yield return new WaitForSeconds(TimeUntilNextPewPew);
     _canPewPew = true;
   }
 
