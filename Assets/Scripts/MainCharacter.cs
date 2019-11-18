@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class MainCharacter : MonoBehaviour
 {
   public Joystick joystick;
   public float Speed = 3;
@@ -19,12 +19,10 @@ public class PlayerController : MonoBehaviour
       rb.velocity.y,
       joystick.Vertical * 5f);
     
-#if UNITY_EDITOR
-    if (Input.GetMouseButton(0))
+    if (Input.GetMouseButton(0) || Input.GetTouch(0).phase != TouchPhase.Ended)
     {
-      
+      UpdatePlayerRotation();
     }
-#endif
   }
 
   private void UpdatePlayerRotation()
