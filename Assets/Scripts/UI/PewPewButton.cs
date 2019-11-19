@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ShootButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler
+public class PewPewButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-  public static ShootButton Instance;
+  public static PewPewButton Instance;
 
   public enum PointerEvent
   {
     None,
-    Clicked,
     Down,
     Up
   }
@@ -27,11 +26,6 @@ public class ShootButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
   public void OnPointerUp(PointerEventData eventData)
   {
     _currentPointerEvent = PointerEvent.Up;
-  }
-
-  public void OnPointerClick(PointerEventData eventData)
-  {
-    _currentPointerEvent = PointerEvent.Clicked;
   }
 
   private void Awake()

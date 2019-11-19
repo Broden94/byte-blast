@@ -152,12 +152,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4dbdbe161a143858b25a623b014e11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  joystick: {fileID: 0}
-  Speed: 10
-  PewPewPrefab: {fileID: 4950397750487861204, guid: c8699ecc081ba408ea1fffb1b3fc4a22,
+  _joystick: {fileID: 0}
+  _pewPewButton: {fileID: 0}
+  _pewPewPrefab: {fileID: 4950397750487861204, guid: c8699ecc081ba408ea1fffb1b3fc4a22,
     type: 3}
-  PewPewSpawnpoint: {fileID: 6756626917445581915}
-  ShootButton: {fileID: 0}
+  _pewPewSpawnpoint: {fileID: 6756626917445581915}
   TimeUntilNextPewPew: 0.2
 --- !u!1 &8918323045086806680
 GameObject:
