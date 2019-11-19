@@ -2,34 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameStateManager : MonoBehaviour
+public class GameStateManager : Singleton<GameStateManager>
 {
-  public static GameStateManager Instance;
-
-  private void Awake()
-  {
-    if (Instance == null) Instance = this;
-    else Destroy(gameObject);
-  }
-
-  [SerializeField]
-  public enum GameState
-  {
-    Countdown,
-    Playing,  // Rename to Unpaused???
-    Paused,
-    Ended
-  }
-
-  [SerializeField]
-  private GameState _currentGameState;
-  public GameState CurrentGameState { get { return _currentGameState; } }
-
-  public void SetGameState(GameState state)
-  {
-    _currentGameState = state;
-    NotifyObservers();
-  }
+#region MonoBehaviour Methods
 
   public void Update()
   {
@@ -39,8 +14,11 @@ public class GameStateManager : MonoBehaviour
       else SetGameState(GameState.Ended);
     }
   }
-  
-  #region Subject Methods for Observer Design Pattern
+
+#endregion
+
+
+#region Subject Methods for Observer Design Pattern
 
   private List<IGameStateObserver> _gameStateObservers = new List<IGameStateObserver>();
 
@@ -63,7 +41,32 @@ public class GameStateManager : MonoBehaviour
       o.UpdateGameStateObserver();
     }
   }
-  #endregion
+
+#endregion
+
+#region Game States
+
+  [SerializeField]
+  public enum GameState
+  {
+    Countdown,
+    Playing,  // Rename to Unpaused???
+    Paused,
+    Ended
+  }
+
+  [SerializeField]
+  private GameState _currentGameState;
+  public GameState CurrentGameState { get { return _currentGameState; } }
+
+  public void SetGameState(GameState state)
+  {
+    _currentGameState = state;
+    NotifyObservers();
+  }
+#endregion
+
+#region Public Methods
 
   public void StartOver() 
   {
@@ -80,4 +83,6 @@ public class GameStateManager : MonoBehaviour
   {
     SetGameState(GameState.Playing);
   }
+
+#endregion
 }

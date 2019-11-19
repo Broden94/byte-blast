@@ -2,16 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameController : MonoBehaviour
+public class GameController : Singleton<GameController>
 {
-  public static GameController Instance;
-
-  private void Awake()
-  {
-    if (Instance == null) Instance = this;
-    else Destroy(gameObject);
-  }
-
   private void Start()
   {
     StartCoroutine(Countdown());

@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AppStateManager : MonoBehaviour
+public class AppStateManager
 {
+#region App States
+
   public enum AppState
   {
     None,
@@ -20,4 +22,6 @@ public class AppStateManager : MonoBehaviour
   {
     _currentAppState = state;
   }
+
+#endregion
 }
