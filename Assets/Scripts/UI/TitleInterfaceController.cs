@@ -7,7 +7,8 @@ public class TitleInterfaceController : MonoBehaviour
   public GameObject MainMenu;
   public GameObject TutorialScreen;
   
-  #region MonoBehaviour Methods
+#region MonoBehaviour Methods
+
   private void Start()
   {
     ResetInterface();
@@ -18,17 +19,21 @@ public class TitleInterfaceController : MonoBehaviour
   {
     ResetInterface();
   }
-  #endregion
 
-  #region Private Methods
+#endregion
+
+#region Private Methods
+
   private void ResetInterface()
   {
     MainMenu.SetActive(false);
     TutorialScreen.SetActive(false);
   }
-  #endregion
 
-  #region Button Methods
+#endregion
+
+#region Button Methods
+
   public void OpenMainMenu()
   {
     MainMenu.SetActive(true);
@@ -45,5 +50,5 @@ public class TitleInterfaceController : MonoBehaviour
   {
     AppController.Instance.OpenScene(AppConstants.GameScene);
   }
-  #endregion
+#endregion
 }

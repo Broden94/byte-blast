@@ -7,11 +7,17 @@ public class PewPewJoystick : Joystick
 {
   public static PewPewJoystick Instance;
 
+#region MonoBehaviour Methods
+
   private void Awake()
   {
     if (Instance == null) Instance = this;
     else Destroy(gameObject);
   }
+
+#endregion
+
+#region Pointer Event Data
 
   public enum MovementEvent
   {
@@ -36,4 +42,6 @@ public class PewPewJoystick : Joystick
     _currentMovementEvent = MovementEvent.Stopped;
     Debug.Log("PewPewJoystick is Stopped");
   }
+
+#endregion
 }

@@ -8,6 +8,7 @@ public class AppController : MonoBehaviour
   public static AppController Instance;
 
   #region MonoBehaviour Methods
+  
   private void Awake()
   {
     if (Instance == null) Instance = this;

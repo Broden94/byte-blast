@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
   private float _pewPewTimer;
 
 #region MonoBehaviour Methods
+
   private void Start()
   {
     _rb = GetComponent<Rigidbody>();
@@ -89,5 +90,6 @@ public class PlayerController : MonoBehaviour
     _canPewPew = true;
   }
   #endregion
+
 #endregion
 }

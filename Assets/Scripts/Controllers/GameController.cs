@@ -6,6 +6,7 @@ public class GameController : MonoBehaviour
 {
   public static GameController Instance;
 
+#region MonoBehaviour Methods
   private void Awake()
   {
     if (Instance == null) Instance = this;
@@ -16,6 +17,7 @@ public class GameController : MonoBehaviour
   {
     StartCoroutine(Countdown());
   }
+#endregion
 
   public IEnumerator Countdown()
   {

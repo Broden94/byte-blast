@@ -5,17 +5,18 @@ using UnityEngine.UI;
 
 public class GameInterfaceController : MonoBehaviour, IGameStateObserver
 {
+  [Header("Screens")]
   public GameObject CountdownScreen;
   public GameObject HUD;
   public GameObject PauseScreen;
   public GameObject EndScreen;
-
   public GameObject StartOverConfirmationScreen;
   public GameObject BackToTitleConfirmationScreen;
 
+  [Header("Buttons")]
   public Button TestButton;
 
-  #region MonoBehaviour Methods
+#region MonoBehaviour Methods
 
   private void Start()
   {
@@ -28,9 +29,11 @@ public class GameInterfaceController : MonoBehaviour, IGameStateObserver
     ResetInterface();
     GameStateManager.Instance.Unregister(this);
   }
-  #endregion
 
-  #region IGameStateObserver Overrides
+#endregion
+
+#region IGameStateObserver Overrides
+  
   public void UpdateGameStateObserver()
   {
     CountdownScreen.SetActive(GameStateManager.Instance.CurrentGameState == GameStateManager.GameState.Countdown);
@@ -38,9 +41,11 @@ public class GameInterfaceController : MonoBehaviour, IGameStateObserver
     PauseScreen.SetActive(GameStateManager.Instance.CurrentGameState == GameStateManager.GameState.Paused);
     EndScreen.SetActive(GameStateManager.Instance.CurrentGameState == GameStateManager.GameState.Ended);
   }
-  #endregion
+
+#endregion
   
-  #region Private Methods
+#region Private Methods
+
   private void ResetInterface()
   {
     CountdownScreen.SetActive(false);
@@ -50,9 +55,11 @@ public class GameInterfaceController : MonoBehaviour, IGameStateObserver
     StartOverConfirmationScreen.SetActive(false);
     BackToTitleConfirmationScreen.SetActive(false);
   }
-  #endregion
+  
+#endregion
 
-  #region Button Methods
+#region Button Methods
+  
   public void OpenPauseScreen()
   {
     PauseScreen.SetActive(true);
@@ -99,5 +106,5 @@ public class GameInterfaceController : MonoBehaviour, IGameStateObserver
   {
     AppController.Instance.OpenScene(AppConstants.TitleScreen);
   }
-  #endregion
+#endregion
 }
