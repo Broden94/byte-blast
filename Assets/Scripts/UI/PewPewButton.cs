@@ -7,6 +7,12 @@ public class PewPewButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
 {
   public static PewPewButton Instance;
 
+  private void Awake()
+  {
+    if (Instance == null) Instance = this;
+    else Destroy(gameObject);
+  }
+
   public enum PointerEvent
   {
     None,
@@ -28,9 +34,5 @@ public class PewPewButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
     _currentPointerEvent = PointerEvent.Up;
   }
 
-  private void Awake()
-  {
-    if (Instance == null) Instance = this;
-    else Destroy(gameObject);
-  }
+
 }
