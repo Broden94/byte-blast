@@ -3,20 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class PewPewButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class PewPewButton : Singleton<PewPewButton>, IPointerDownHandler, IPointerUpHandler
 {
-  public static PewPewButton Instance;
-
-#region MonoBehaviour Methods
-
-  private void Awake()
-  {
-    if (Instance == null) Instance = this;
-    else Destroy(gameObject);
-  }
-
-#endregion
-
 #region Pointer Event Data
 
   public enum PointerEvent

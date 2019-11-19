@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Use
-
-public class PlayerController : MonoBehaviour
+public class PlayerController : Singleton<PlayerController>
 {
   [Header("Prefab-owned Objects/Components")]
   [SerializeField] private GameObject _pewPewPrefab;
