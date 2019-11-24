@@ -9,7 +9,7 @@ public class PlayerAttack : MonoBehaviour
 
   [Header("Pew Pew Variables")]
   private bool _canPewPew = true;
-  [SerializeField] private float TimeUntilNextPewPew = .2f;
+  [SerializeField] private float _refreshRate = .2f;
   private float _pewPewTimer;
 
   private void Update()
@@ -43,7 +43,7 @@ public class PlayerAttack : MonoBehaviour
   public IEnumerator CountdownToNextPewPew()
   {
     _canPewPew = false;
-    yield return new WaitForSeconds(TimeUntilNextPewPew);
+    yield return new WaitForSeconds(_refreshRate);
     _canPewPew = true;
   }
   #endregion
