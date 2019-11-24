@@ -5,16 +5,16 @@ using UnityEngine.EventSystems;
 
 public class PewPewJoystick : Joystick
 {
-  public static PewPewJoystick Instance;
-
-#region MonoBehaviour Methods
+  
+#region Singleton Pattern
+  private static PewPewJoystick _instance;
+  public static PewPewJoystick Instance => _instance;
 
   private void Awake()
   {
-    if (Instance == null) Instance = this;
+    if (_instance == null) _instance = this;
     else Destroy(gameObject);
   }
-
 #endregion
 
 #region Pointer Event Data
