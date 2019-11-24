@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ObjectPool<T> : MonoBehaviour where T : Component
+public abstract class GenericObjectPool<T> : MonoBehaviour where T : Component
 {
 
 #region Singleton Pattern
-  private static ObjectPool<T> _instance;
-  public static ObjectPool<T> Instance => _instance;
+  private static GenericObjectPool<T> _instance;
+  public static GenericObjectPool<T> Instance => _instance;
   
   private void Awake()
   {
