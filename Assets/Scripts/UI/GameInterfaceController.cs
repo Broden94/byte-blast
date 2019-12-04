@@ -20,14 +20,14 @@ public class GameInterfaceController : MonoBehaviour, IGameStateObserver
 
   private void Start()
   {
-    GameStateManager.Instance.Register(this);
+    GameManager.Instance.Register(this);
     UpdateGameStateObserver();
   }
 
   private void OnDestroy()
   {
     ResetInterface();
-    GameStateManager.Instance.Unregister(this);
+    GameManager.Instance.Unregister(this);
   }
 
 #endregion
@@ -36,10 +36,10 @@ public class GameInterfaceController : MonoBehaviour, IGameStateObserver
   
   public void UpdateGameStateObserver()
   {
-    CountdownScreen.SetActive(GameStateManager.Instance.CurrentGameState == GameStateManager.GameState.Countdown);
-    HUD.SetActive(GameStateManager.Instance.CurrentGameState == GameStateManager.GameState.Playing);
-    PauseScreen.SetActive(GameStateManager.Instance.CurrentGameState == GameStateManager.GameState.Paused);
-    EndScreen.SetActive(GameStateManager.Instance.CurrentGameState == GameStateManager.GameState.Ended);
+    CountdownScreen.SetActive(GameManager.Instance.CurrentGameState == GameManager.GameState.Countdown);
+    HUD.SetActive(GameManager.Instance.CurrentGameState == GameManager.GameState.Playing);
+    PauseScreen.SetActive(GameManager.Instance.CurrentGameState == GameManager.GameState.Paused);
+    EndScreen.SetActive(GameManager.Instance.CurrentGameState == GameManager.GameState.Ended);
   }
 
 #endregion
@@ -63,13 +63,13 @@ public class GameInterfaceController : MonoBehaviour, IGameStateObserver
   public void OpenPauseScreen()
   {
     PauseScreen.SetActive(true);
-    GameStateManager.Instance.Pause();
+    GameManager.Instance.Pause();
   }
 
   public void ClosePauseScreen()
   {
     PauseScreen.SetActive(false);
-    GameStateManager.Instance.Unpause();
+    GameManager.Instance.Unpause();
   }
 
   public void OpenStartOverConfirmationScreen()
@@ -99,12 +99,12 @@ public class GameInterfaceController : MonoBehaviour, IGameStateObserver
   public void StartOver()
   {
     ResetInterface();
-    GameStateManager.Instance.StartOver();
+    GameManager.Instance.StartOver();
   }
 
   public void GoToTitle()
   {
-    AppController.Instance.OpenScene(AppConstants.TitleScreen);
+    GameManager.Instance.OpenScene(AppConstants.TitleScreen);
   }
 #endregion
 }
