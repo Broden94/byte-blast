@@ -118,3 +118,26 @@ This serves as a base class. Each derived Enemy class has their own, distinct be
 * Play
 * Settings (optional)
 * Leaderboard (optional)
+
+## Object Pooling
+
+Responsibilities
+* Take in any class (generic)
+* Abstract; should only be inherited
+* Handles only object pooling methods (behavior of object are on the objects themselves)
+
+
+## Behaviors
+
+### Bullet/Projectiles
+
+Requirements
+* Speed variable
+* Rigidbody for velocity/movement; add Rigidbody component if not present
+* Timer for activity
+* Reference to its pool for return
+
+Use Cases
+* Use as an object within an object pool
+* Setting active/inactive is controlled by the pool it belongs to
+* Only functionality in its class should be movement and a timer to track how long the object has been active
