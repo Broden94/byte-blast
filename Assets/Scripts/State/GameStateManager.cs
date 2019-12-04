@@ -2,8 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameStateManager : Singleton<GameStateManager>
+public class GameStateManager : MonoBehaviour
 {
+#region Singleton Pattern
+  private static GameStateManager _instance;
+  public static GameStateManager Instance => _instance;
+
+  private void Awake()
+  {
+    if (_instance == null) _instance = this;
+    else Destroy(gameObject);
+  }
+#endregion
+
 #region MonoBehaviour Methods
 
   public void Update()
@@ -71,7 +82,7 @@ public class GameStateManager : Singleton<GameStateManager>
   public void StartOver() 
   {
     SetGameState(GameState.Countdown);
-    StartCoroutine(GameController.Instance.Countdown());
+    //StartCoroutine(GameController.Instance.Countdown());
   }
 
   public void Pause()
