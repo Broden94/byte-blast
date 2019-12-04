@@ -6,6 +6,6 @@ public class BulletPool : GenericObjectPool<Bullet>
 
   private void Start()
   {
-    AddObjectsToPool(_poolCount);
+    AddObjectsToPool(_poolCount, true);
   }
 }

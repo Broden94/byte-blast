@@ -19,11 +19,12 @@ public abstract class GenericObjectPool<T> : MonoBehaviour where T : Component
   [SerializeField] private T _prefab;
   private Queue<T> _pool = new Queue<T>();
 
-  public void AddObjectsToPool(int count)
+  public void AddObjectsToPool(int count, bool setParent)
   {
     for (int i = 0; i < count; i++)
     {
       var obj = GameObject.Instantiate(_prefab);
+      if (setParent) obj.transform.SetParent(transform);
       obj.gameObject.SetActive(false);
       _pool.Enqueue(obj);
     }
