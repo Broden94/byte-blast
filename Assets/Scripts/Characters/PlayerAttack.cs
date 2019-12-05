@@ -33,13 +33,9 @@ public class PlayerAttack : MonoBehaviour
 
   private void PewPew()
   {
-    // Start object pool
-      // GameObject pewPew = Instantiate(_pewPewPrefab, _pewPewSpawnpoint.position, _pewPewSpawnpoint.rotation);
-      // pewPew.GetComponent<Rigidbody>().velocity = (pewPew.transform.forward) * 50;
-      // Destroy(pewPew, 3);
-
-    BulletPool.Instance.NextObjectFromPool().gameObject.SetActive(true);
-    // End object pool
+    var nextObject = BulletPool.Instance.NextObjectFromPool();
+    BulletPool.Instance.SetSpawnTransform(nextObject, _pewPewSpawnpoint);
+    nextObject.gameObject.SetActive(true);
   }
 
   public IEnumerator CountdownToNextPewPew()
