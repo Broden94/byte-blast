@@ -9,9 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9141203673831982709}
-  - component: {fileID: 8993462509019241467}
   m_Layer: 0
-  m_Name: PewPewSpawnpoint
+  m_Name: BulletSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,20 +30,6 @@ Transform:
   m_Father: {fileID: 5557525353297793160}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8993462509019241467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5127105838326093986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78c7a29240d014ff6b99d4499ed2a8de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prefab: {fileID: 7253736393370412291, guid: 7e11686fa81b544f793bd4e39ebdc879, type: 3}
-  _poolCount: 30
 --- !u!1 &5685819661055662588
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,7 +184,7 @@ GameObject:
   - component: {fileID: 6598839484455850213}
   - component: {fileID: 8121239593262973865}
   m_Layer: 0
-  m_Name: PewPewer
+  m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
