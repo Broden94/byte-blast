@@ -7,7 +7,6 @@ public class Bullet : Projectile
 
   private void OnEnable()
   {
-    SetStartPosition(transform.position);
     SetSpeed(_bulletSpeed);
     SetLifetime(_bulletLifetime);
 
@@ -18,15 +17,10 @@ public class Bullet : Projectile
   {
     TravelForward();
 
-    if (HasExpired())
+    if (HasExpired)
     {
       Debug.Log("Lifetime has expired.");
       BulletPool.Instance.ReturnObjectToPool(this); // $LL TODO - Call via event
     }
-  }
-
-  private void OnDisable()
-  {
-    ResetPosition();
   }
 }
