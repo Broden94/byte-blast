@@ -223,7 +223,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: -0.0625, y: 0, z: 7.5, w: 6}
+  m_BoundingSphereOverride: {x: 1e-45, y: 1.3e-44, z: 3.024e-42, w: 6e-44}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -4738,3 +4738,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e911ce9a047d4be99104b3292414c4f, type: 3}
+--- !u!1 &8993462509019241466 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5127105838326093986, guid: 7e911ce9a047d4be99104b3292414c4f,
+    type: 3}
+  m_PrefabInstance: {fileID: 8993462509019241465}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8993462509019241467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8993462509019241466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78c7a29240d014ff6b99d4499ed2a8de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 7253736393370412291, guid: 7e11686fa81b544f793bd4e39ebdc879, type: 3}
+  _poolName: PlayerBulletPool
+  _poolCount: 30
