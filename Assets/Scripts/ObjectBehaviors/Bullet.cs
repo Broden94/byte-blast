@@ -7,6 +7,7 @@ public class Bullet : Projectile
 
   private void OnEnable()
   {
+    _rigidbody.isKinematic = false;
     SetSpeed(_bulletSpeed);
     SetLifetime(_bulletLifetime);
 
@@ -22,5 +23,10 @@ public class Bullet : Projectile
       Debug.Log("Lifetime has expired.");
       BulletPool.Instance.ReturnObjectToPool(this); // $LL TODO - Call via event
     }
+  }
+
+  private void OnDisable()
+  {
+    _rigidbody.isKinematic = true;
   }
 }
