@@ -48,7 +48,7 @@ public class TitleInterfaceController : MonoBehaviour
 
   public void GoToGame()
   {
-    AppController.Instance.OpenScene(AppConstants.GameScene);
+    GameManager.Instance.OpenScene(AppConstants.GameScene);
   }
 #endregion
 }

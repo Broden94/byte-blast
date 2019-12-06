@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9141203673831982709}
   m_Layer: 0
-  m_Name: PewPewSpawnpoint
+  m_Name: BulletSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5127105838326093986}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.8}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5557525353297793160}
@@ -59,7 +59,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5685819661055662588}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -170,7 +170,7 @@ MonoBehaviour:
   _pewPewPrefab: {fileID: 4950397750487861204, guid: c8699ecc081ba408ea1fffb1b3fc4a22,
     type: 3}
   _pewPewSpawnpoint: {fileID: 9141203673831982709}
-  TimeUntilNextPewPew: 0.2
+  _refreshRate: 0.2
 --- !u!1 &7381121764840790281
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 6598839484455850213}
   - component: {fileID: 8121239593262973865}
   m_Layer: 0
-  m_Name: PewPewer
+  m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

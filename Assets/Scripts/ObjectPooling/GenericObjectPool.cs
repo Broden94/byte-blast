@@ -16,10 +16,11 @@ public abstract class GenericObjectPool<T> : MonoBehaviour where T : Component
   }
 #endregion
 
+#region Object Pooling
   [SerializeField] private T _prefab;
   private Queue<T> _pool = new Queue<T>();
 
-  public void AddObjectsToPool(int count)
+  public void AddObjectsToPool(int count, bool setParent)
   {
     for (int i = 0; i < count; i++)
     {
@@ -39,4 +40,22 @@ public abstract class GenericObjectPool<T> : MonoBehaviour where T : Component
     objectToReturn.gameObject.SetActive(false);
     _pool.Enqueue(objectToReturn);
   }
+#endregion
+
+#region Other Methods
+  protected void CreateParent(string parentName)
+  {
+    var parent = new GameObject(parentName);
+    foreach (T obj in _pool)
+    {
+      obj.transform.SetParent(parent.transform);
+    }
+  }
+
+  public void SetSpawnTransform(T obj, Transform spawn)
+  {
+    obj.transform.position = spawn.position;
+    obj.transform.rotation = spawn.rotation;
+  }
+#endregion
 }
