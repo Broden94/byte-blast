@@ -34,21 +34,11 @@ public abstract class Projectile : MonoBehaviour
     _rigidbody.velocity = transform.forward * _speed;
   }
 
-  private protected bool HasExpired()
-  {
-    return (Time.time >= _currentTime);
-  }
+  private protected bool HasExpired { get { return (Time.time >= _currentTime); } }
 
   private protected void SetStartPosition(Vector3 pos)
   {
     _startPosition = pos;
-  }
-#endregion
-
-#region Public Methods -------------------------------------------------------------------
-  public void ResetPosition()
-  {
-    transform.position = _startPosition;
   }
 #endregion
 }
