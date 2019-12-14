@@ -33,8 +33,9 @@ public class PlayerAttack : MonoBehaviour
 
   private void PewPew()
   {
-    var nextObject = BulletPool.Instance.NextObjectFromPool();
-    BulletPool.Instance.SetSpawnTransform(nextObject, _pewPewSpawnpoint);
+    var nextObject = BulletPool.Instance.NextPoolObject();
+    nextObject.transform.position = _pewPewSpawnpoint.position;
+    nextObject.transform.rotation = _pewPewSpawnpoint.rotation;
     nextObject.gameObject.SetActive(true);
   }
 
