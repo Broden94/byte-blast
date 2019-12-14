@@ -22,4 +22,14 @@ public class EnemyManager : MonoBehaviour
 
   [SerializeField] public Transform PlayerTransform;
   [SerializeField] public Transform CenterOrbitTransform;
+
+  public void AddToEnemyCount()
+  {
+    _enemyCount++;
+  }
+
+  public void SubtractFromEnemyCount()
+  {
+    _enemyCount--;
+  }
 }
