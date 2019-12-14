@@ -1,0 +1,3 @@
+[submodule "Assets/ThirdParty/object-pooling"]
+	path = Assets/ThirdParty/object-pooling
+	url = https://github.com/laurenlizardo/object-pooling

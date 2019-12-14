@@ -22,6 +22,7 @@ public class Bullet : Projectile
     {
       Debug.Log("Lifetime has expired.");
       BulletPool.Instance.ReturnObjectToPool(this); // $LL TODO - Call via event
+      gameObject.SetActive(false);
     }
   }
 
