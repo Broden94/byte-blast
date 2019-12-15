@@ -1,3 +1,6 @@
 [submodule "Assets/ThirdParty/object-pooling"]
 	path = Assets/ThirdParty/object-pooling
 	url = https://github.com/laurenlizardo/object-pooling
+[submodule "Assets/ThirdParty/wave-spawning"]
+	path = Assets/ThirdParty/wave-spawning
+	url = https://github.com/laurenlizardo/wave-spawning
