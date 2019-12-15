@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class EnemyShooter : Enemy
 {
-
+  public override GameObject NextPoolObject()
+  {
+    return EnemyShooterPool.Instance.NextPoolObject().gameObject;
+  }
 }

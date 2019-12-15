@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class EnemySlimer : Enemy
 {
-
+  public override GameObject NextPoolObject()
+  {
+    return EnemySlimerPool.Instance.NextPoolObject().gameObject;
+  }
 }
