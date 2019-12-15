@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 414d86c40de8d4fa4a378d801ee82552, type: 3}
   m_Name: EnemyWave3
   m_EditorClassIdentifier: 
-  WaveFormation: {fileID: 8672282234503660860, guid: ec1dd2e235b224ade9ee8977fc372475,
+  WaveFormation: {fileID: 7768652697260289610, guid: ab472459b0c0546618af3ebdf95db822,
     type: 3}
   SpawnDelay: 0.125
   WaveElements:
-  - {fileID: 6717807536632213763, guid: ecb73cb52048948f5b8e9fed00e96602, type: 3}
-  - {fileID: 6717807536632213763, guid: d18c1b5aec8e24271adc3ab6eebf9030, type: 3}
-  - {fileID: 6717807536632213763, guid: d18c1b5aec8e24271adc3ab6eebf9030, type: 3}
-  - {fileID: 6717807536632213763, guid: ecb73cb52048948f5b8e9fed00e96602, type: 3}
-  - {fileID: 6717807536632213763, guid: ecb73cb52048948f5b8e9fed00e96602, type: 3}
-  - {fileID: 6717807536632213763, guid: d18c1b5aec8e24271adc3ab6eebf9030, type: 3}
-  - {fileID: 6717807536632213763, guid: d18c1b5aec8e24271adc3ab6eebf9030, type: 3}
-  - {fileID: 6717807536632213763, guid: ecb73cb52048948f5b8e9fed00e96602, type: 3}
+  - {fileID: -9092246669473587218, guid: e5b1411161d1b884597bee02085399f7, type: 3}
+  - {fileID: -9092246669473587218, guid: e5b1411161d1b884597bee02085399f7, type: 3}
+  - {fileID: -9092246669473587218, guid: e5b1411161d1b884597bee02085399f7, type: 3}
+  - {fileID: -9092246669473587218, guid: e5b1411161d1b884597bee02085399f7, type: 3}
+  - {fileID: -9092246669473587218, guid: e5b1411161d1b884597bee02085399f7, type: 3}
+  - {fileID: -9092246669473587218, guid: e5b1411161d1b884597bee02085399f7, type: 3}
+  - {fileID: -9092246669473587218, guid: e5b1411161d1b884597bee02085399f7, type: 3}
+  - {fileID: -9092246669473587218, guid: e5b1411161d1b884597bee02085399f7, type: 3}

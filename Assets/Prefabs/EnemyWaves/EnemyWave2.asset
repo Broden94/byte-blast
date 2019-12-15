@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 414d86c40de8d4fa4a378d801ee82552, type: 3}
   m_Name: EnemyWave2
   m_EditorClassIdentifier: 
-  WaveFormation: {fileID: 8672282234503660860, guid: ec1dd2e235b224ade9ee8977fc372475,
+  WaveFormation: {fileID: 5478375784264386194, guid: e5b38a103e7104b9d9ed13a4ca5e2547,
     type: 3}
   SpawnDelay: 0.25
   WaveElements:
-  - {fileID: 6717807536632213763, guid: d18c1b5aec8e24271adc3ab6eebf9030, type: 3}
-  - {fileID: 6717807536632213763, guid: 1e4383398673440bdaf5266bb9491375, type: 3}
-  - {fileID: 6717807536632213763, guid: d18c1b5aec8e24271adc3ab6eebf9030, type: 3}
-  - {fileID: 6717807536632213763, guid: 1e4383398673440bdaf5266bb9491375, type: 3}
-  - {fileID: 6717807536632213763, guid: 1e4383398673440bdaf5266bb9491375, type: 3}
-  - {fileID: 6717807536632213763, guid: 1e4383398673440bdaf5266bb9491375, type: 3}
+  - {fileID: 3373501584505003468, guid: ce814465c43b36545be6c3b268c9c668, type: 3}
+  - {fileID: 3373501584505003468, guid: ce814465c43b36545be6c3b268c9c668, type: 3}
+  - {fileID: 3373501584505003468, guid: ce814465c43b36545be6c3b268c9c668, type: 3}
+  - {fileID: 3373501584505003468, guid: ce814465c43b36545be6c3b268c9c668, type: 3}
+  - {fileID: 3373501584505003468, guid: ce814465c43b36545be6c3b268c9c668, type: 3}
+  - {fileID: 3373501584505003468, guid: ce814465c43b36545be6c3b268c9c668, type: 3}

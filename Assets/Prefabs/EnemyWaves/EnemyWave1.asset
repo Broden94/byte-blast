@@ -16,7 +16,7 @@ MonoBehaviour:
     type: 3}
   SpawnDelay: 0.5
   WaveElements:
-  - {fileID: 6717807536632213763, guid: d18c1b5aec8e24271adc3ab6eebf9030, type: 3}
-  - {fileID: 6717807536632213763, guid: 1e4383398673440bdaf5266bb9491375, type: 3}
-  - {fileID: 6717807536632213763, guid: d18c1b5aec8e24271adc3ab6eebf9030, type: 3}
-  - {fileID: 6717807536632213763, guid: 1e4383398673440bdaf5266bb9491375, type: 3}
+  - {fileID: 2173998475917226252, guid: 26b667ae726bb2342b1fdd45d885c07f, type: 3}
+  - {fileID: 2173998475917226252, guid: 26b667ae726bb2342b1fdd45d885c07f, type: 3}
+  - {fileID: 2173998475917226252, guid: 26b667ae726bb2342b1fdd45d885c07f, type: 3}
+  - {fileID: 2173998475917226252, guid: 26b667ae726bb2342b1fdd45d885c07f, type: 3}
