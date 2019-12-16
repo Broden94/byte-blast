@@ -43,7 +43,7 @@ public class Bullet : Projectile
   private void OnDisable()
   {
     _rigidbody.isKinematic = true;
-    //BulletPool.Instance.ReturnObjectToPool(this); // $LL TODO - Call via event
+    BulletPool.Instance.ReturnObjectToPool(this); // $LL TODO - Call via event
   }
 #endregion
 }
