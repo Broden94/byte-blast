@@ -7,6 +7,9 @@ public class EnemyWaveManager : WaveManager<EnemyWave>
   private void Update()
   {
     if (Input.GetKeyDown(KeyCode.S)) StartCoroutine(SpawnWave());
+
+    // $LL - This works. Needs time buffer between waves. May need to convert List to Queue, but will face problem with manually inserting Waves.
+    if (EnemyManager.EnemyCount == 0) StartCoroutine(SpawnWave());
   }
 
   public override IEnumerator SpawnWave()
