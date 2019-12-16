@@ -2,6 +2,7 @@ using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour, IDamageable<int>
 {
+  [SerializeField] private Collider collider;
   [SerializeField] private int _health;
   public int Health => _health;
 
