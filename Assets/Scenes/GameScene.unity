@@ -259,7 +259,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 5.3e-44, y: 7.6931106e-20, z: 1.22e-43, w: 0.08984375}
+  m_BoundingSphereOverride: {x: 6e-45, y: 8.637916e-20, z: 5.6e-44, w: 0.12109375}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1491,6 +1491,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &502435229 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2784740957477064231, guid: 3371fe488ddbf4aaeaeb80b341d950dc,
+    type: 3}
+  m_PrefabInstance: {fileID: 905469367}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &539031528
 GameObject:
   m_ObjectHideFlags: 0
@@ -2527,7 +2533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e162f38b822a408dab1c26919e81524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerTransform: {fileID: 0}
+  PlayerTransform: {fileID: 502435229}
   CenterOrbitTransform: {fileID: 11947108}
 --- !u!4 &960541489
 Transform:
