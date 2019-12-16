@@ -8,4 +8,9 @@ public class EnemyShooter : Enemy
   {
     return EnemyShooterPool.Instance.NextPoolObject().gameObject;
   }
+
+  public override void OnDisable()
+  {
+    EnemyShooterPool.Instance.ReturnObjectToPool(this);
+  }
 }

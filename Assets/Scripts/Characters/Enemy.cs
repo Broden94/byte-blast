@@ -11,4 +11,13 @@ public abstract class Enemy : MonoBehaviour, IDamageable<int>
   }
 
   public abstract GameObject NextPoolObject();
+  public abstract void OnDisable();
+
+  private protected void OnCollisionEnter(Collision collision)
+  {
+    if (collision.gameObject.GetComponent<Player>() != null)
+    {
+      gameObject.SetActive(false);
+    }
+  }
 }

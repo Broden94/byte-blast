@@ -8,4 +8,9 @@ public class EnemySlimer : Enemy
   {
     return EnemySlimerPool.Instance.NextPoolObject().gameObject;
   }
+
+  public override void OnDisable()
+  {
+    EnemySlimerPool.Instance.ReturnObjectToPool(this);
+  }
 }
