@@ -11,6 +11,7 @@ public class EnemyHunter : Enemy
 
   public override void OnDisable()
   {
+    base.OnDisable();
     EnemyHunterPool.Instance.ReturnObjectToPool(this);
   }
 }

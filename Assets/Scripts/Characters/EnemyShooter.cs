@@ -11,6 +11,7 @@ public class EnemyShooter : Enemy
 
   public override void OnDisable()
   {
+    base.OnDisable();
     EnemyShooterPool.Instance.ReturnObjectToPool(this);
   }
 }

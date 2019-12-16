@@ -11,7 +11,11 @@ public abstract class Enemy : MonoBehaviour, IDamageable<int>
   }
 
   public abstract GameObject NextPoolObject();
-  public abstract void OnDisable();
+
+  private protected void OnEnable()
+  {
+    EnemyManager.EnemyCount++;
+  }
 
   private protected void OnCollisionEnter(Collision collision)
   {
@@ -19,5 +23,10 @@ public abstract class Enemy : MonoBehaviour, IDamageable<int>
     {
       gameObject.SetActive(false);
     }
+  }
+
+  public virtual void OnDisable()
+  {
+    EnemyManager.EnemyCount--;
   }
 }

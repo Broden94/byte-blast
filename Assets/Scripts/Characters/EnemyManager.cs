@@ -17,8 +17,7 @@ public class EnemyManager : MonoBehaviour
   }
 #endregion
 
-  private static int _enemyCount;
-  public static int EnemyCount => _enemyCount;
+  public static int EnemyCount;
 
   [SerializeField] public Transform PlayerTransform;
   [SerializeField] public Transform CenterOrbitTransform;

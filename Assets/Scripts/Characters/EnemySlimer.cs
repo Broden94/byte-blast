@@ -11,6 +11,7 @@ public class EnemySlimer : Enemy
 
   public override void OnDisable()
   {
+    base.OnDisable();
     EnemySlimerPool.Instance.ReturnObjectToPool(this);
   }
 }
