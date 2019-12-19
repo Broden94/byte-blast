@@ -1425,6 +1425,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 310d4223bc7834890b494f7cf6c552f7, type: 2}
   - {fileID: 11400000, guid: 5c7e4a79530a44b64bdd3c826cb86a81, type: 2}
   - {fileID: 11400000, guid: b33c1a1ece955437593bdceda613b534, type: 2}
+  TimeDelayBeforeWave: 1
 --- !u!1 &484218069
 GameObject:
   m_ObjectHideFlags: 0

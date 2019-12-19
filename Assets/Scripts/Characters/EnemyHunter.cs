@@ -9,9 +9,8 @@ public class EnemyHunter : Enemy
     return EnemyHunterPool.Instance.NextPoolObject().gameObject;
   }
 
-  public override void OnDisable()
+  public override void ReturnObjectToPool()
   {
-    base.OnDisable();
     EnemyHunterPool.Instance.ReturnObjectToPool(this);
   }
 }

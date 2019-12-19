@@ -222,6 +222,7 @@ MonoBehaviour:
   _maxY: 1
   _maxDistanceFromPlayer: 3
   _faceThePlayer: 1
+  _delayTime: 1
 --- !u!64 &755882292168464285
 MeshCollider:
   m_ObjectHideFlags: 0

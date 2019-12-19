@@ -9,9 +9,8 @@ public class EnemyShooter : Enemy
     return EnemyShooterPool.Instance.NextPoolObject().gameObject;
   }
 
-  public override void OnDisable()
+  public override void ReturnObjectToPool()
   {
-    base.OnDisable();
     EnemyShooterPool.Instance.ReturnObjectToPool(this);
   }
 }

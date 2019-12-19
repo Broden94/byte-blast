@@ -27,11 +27,7 @@ public class GameManager : MonoBehaviour // Make this a gameobject singleton
 
   public void Update()
   {
-    if (Input.GetKeyUp(KeyCode.Space))
-    {
-      if (_currentGameState != GameState.Playing) SetGameState(GameState.Playing);
-      else SetGameState(GameState.Ended);
-    }
+    
   }
 #endregion
 
