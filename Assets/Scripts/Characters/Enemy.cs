@@ -24,9 +24,4 @@ public abstract class Enemy : MonoBehaviour, IDamageable<int>
       gameObject.SetActive(false);
     }
   }
-
-  public virtual void OnDisable()
-  {
-    EnemyManager.EnemyCount--;
-  }
 }
