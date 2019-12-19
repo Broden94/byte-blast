@@ -50,6 +50,7 @@ public abstract class EnemyMovement : MonoBehaviour
   public virtual void Start()
   {
     if (_faceThePlayer) FaceTarget(_playerTransform);
+    StartCoroutine(DelayMovement(_delayTime));
   }
 
   public virtual void FixedUpdate()
@@ -61,7 +62,7 @@ public abstract class EnemyMovement : MonoBehaviour
 
   private protected bool _canMove;
   [SerializeField] private protected float _delayTime;
-  private protected IEnumerator Delay(float delayTime)
+  private protected IEnumerator DelayMovement(float delayTime)
   { 
     _canMove = false;
     yield return new WaitForSeconds(delayTime);
