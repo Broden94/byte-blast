@@ -6,11 +6,17 @@ public class EnemyWaveManager : WaveManager<EnemyWave>
 {
   private void Update()
   {
-    if (Input.GetKeyDown(KeyCode.Alpha1)) SpawnWaveElements();
+    if (Input.GetKeyDown(KeyCode.Alpha1)) StartCoroutine(DelayedWaveSpawning());
     else if (Input.GetKeyDown(KeyCode.Alpha2)) StartCoroutine(SpawnWaveElementsInOrder());
 
     // $LL - This works. Needs time buffer between waves. May need to convert List to Queue, but will face problem with manually inserting Waves.
     //if (EnemyManager.EnemyCount == 0) StartCoroutine(SpawnWaveElementsInOrder());
+  }
+
+  public IEnumerator DelayedWaveSpawning()
+  {
+    yield return new WaitForSeconds(TimeDelayBeforeWave);
+    SpawnWaveElements();
   }
 
   public override void SpawnWaveElements()
