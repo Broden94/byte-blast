@@ -24,4 +24,6 @@ public abstract class Enemy : MonoBehaviour, IDamageable<int>
       gameObject.SetActive(false);
     }
   }
+
+  public abstract void ReturnObjectToPool();
 }
