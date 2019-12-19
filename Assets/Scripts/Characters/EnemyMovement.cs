@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public abstract class EnemyMovement : MonoBehaviour
 {
@@ -56,5 +57,14 @@ public abstract class EnemyMovement : MonoBehaviour
     var currentPosition = transform.position;
     currentPosition.y = Mathf.Clamp(currentPosition.y, _minY, _maxY);
     transform.position = currentPosition;
+  }
+
+  private protected bool _canMove;
+  [SerializeField] private protected float _delayTime;
+  private protected IEnumerator Delay(float delayTime)
+  { 
+    _canMove = false;
+    yield return new WaitForSeconds(delayTime);
+    _canMove = true;
   }
 }
