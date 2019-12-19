@@ -22,6 +22,8 @@ public abstract class Enemy : MonoBehaviour, IDamageable<int>
     if (collision.gameObject.GetComponent<Player>() != null)
     {
       gameObject.SetActive(false);
+      EnemyManager.EnemyCount--;
+      ReturnObjectToPool();
     }
   }
 
