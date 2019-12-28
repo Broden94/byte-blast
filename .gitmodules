@@ -4,3 +4,6 @@
 [submodule "Assets/ThirdParty/wave-spawning"]
 	path = Assets/ThirdParty/wave-spawning
 	url = https://github.com/laurenlizardo/wave-spawning
+[submodule "Assets/ThirdParty/observer-pattern"]
+	path = Assets/ThirdParty/observer-pattern
+	url = https://github.com/laurenlizardo/observer-pattern.git
