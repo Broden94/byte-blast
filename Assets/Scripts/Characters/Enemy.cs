@@ -17,12 +17,16 @@ public abstract class Enemy : MonoBehaviour, IDamageable<int>
     EnemyManager.EnemyCount++;
   }
 
+  private protected void OnDisable()
+  {
+    EnemyManager.EnemyCount--;
+  }
+
   private protected void OnCollisionEnter(Collision collision)
   {
     if (collision.gameObject.GetComponent<Player>() != null)
     {
       gameObject.SetActive(false);
-      EnemyManager.EnemyCount--;
       ReturnObjectToPool();
     }
   }

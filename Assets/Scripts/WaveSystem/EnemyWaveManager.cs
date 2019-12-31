@@ -13,6 +13,9 @@ public class EnemyWaveManager : WaveManager<EnemyWave>
 
     // $LL - This works. Needs time buffer between waves. May need to convert List to Queue, but will face problem with manually inserting Waves.
     //if (EnemyManager.EnemyCount == 0) StartCoroutine(SpawnWaveElementsInOrder());
+    //if (EnemyManager.EnemyCount == 0) StartCoroutine(DelayedWaveSpawning());
+
+    Debug.Log(string.Format("Enemy Count: {0}", EnemyManager.EnemyCount));
   }
 
   public IEnumerator DelayedWaveSpawning()
@@ -44,4 +47,19 @@ public class EnemyWaveManager : WaveManager<EnemyWave>
       yield return new WaitForSeconds(Waves[_currentWaveIndex].SpawnDelay);
     }
   }
+
+  public int NextWaveIndex { get { return CurrentWaveIndex++; } }
+
+  public void SetWaveIndex()
+  {
+    CurrentWaveIndex = NextWaveIndex;
+  }
+
+  public enum EnemyWaveState
+  {
+    Active,
+    Inactive
+  }
+  
+  public EnemyWaveState CurrentEnemyWaveState;
 }
