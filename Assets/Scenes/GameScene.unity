@@ -259,7 +259,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 6e-45, y: 8.637916e-20, z: 5.6e-44, w: 0.12109375}
+  m_BoundingSphereOverride: {x: 1e-45, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1426,6 +1426,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5c7e4a79530a44b64bdd3c826cb86a81, type: 2}
   - {fileID: 11400000, guid: b33c1a1ece955437593bdceda613b534, type: 2}
   TimeDelayBeforeWave: 1
+  CurrentEnemyWaveState: 0
 --- !u!1 &484218069
 GameObject:
   m_ObjectHideFlags: 0
@@ -2455,6 +2456,12 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 112
       objectReference: {fileID: 0}
+    - target: {fileID: 6628847416305644561, guid: 3371fe488ddbf4aaeaeb80b341d950dc,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -5495902117074765545, guid: 1efbb5964f091544abcd605e35980820,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3371fe488ddbf4aaeaeb80b341d950dc, type: 3}
 --- !u!1 &939339549
@@ -3959,11 +3966,11 @@ RectTransform:
   m_Father: {fileID: 760294658}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -49.99998}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 600, y: 150}
-  m_Pivot: {x: 0.5, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1644792332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3997,7 +4004,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 3
+  m_Text: standby
 --- !u!222 &1644792333
 CanvasRenderer:
   m_ObjectHideFlags: 0
